@@ -4,6 +4,7 @@ import 'package:first_week/assets/themes/typography/app_typography.dart';
 import 'package:first_week/features/common/screens/main/widgets/task_item_widget.dart';
 import 'package:flutter/material.dart';
 
+// Main screen
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
