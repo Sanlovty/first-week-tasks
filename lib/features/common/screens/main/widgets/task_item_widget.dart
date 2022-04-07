@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // Widget for tasks, used in main screen
 class TaskItemWidget extends StatelessWidget {
   final String title;
-  final void Function() onTapCallback;
+  final VoidCallback onTapCallback;
 
   const TaskItemWidget({
     Key? key,
@@ -15,7 +15,7 @@ class TaskItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTapCallback,
       child: Container(
         height: 48,
@@ -33,7 +33,9 @@ class TaskItemWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppTypography.normalEerieBlackTextStyle,
+              style: AppTypography.normalTextStyle.copyWith(
+                color: AppColors.black,
+              ),
             ),
             const Icon(
               Icons.arrow_forward,
