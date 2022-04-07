@@ -21,4 +21,10 @@ class AppTypography {
     fontFamily: defaultFontFamily,
     fontSize: 16,
   );
+  
+  static const smallTextStyle = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontFamily: defaultFontFamily,
+    fontSize: 14,
+  );
 }
