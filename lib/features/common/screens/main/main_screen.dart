@@ -2,6 +2,7 @@ import 'package:first_week/assets/colors/app_colors.dart';
 import 'package:first_week/assets/strings/app_strings.dart';
 import 'package:first_week/assets/themes/typography/app_typography.dart';
 import 'package:first_week/features/common/screens/main/widgets/task_item_widget.dart';
+import 'package:first_week/features/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
 // Main screen
@@ -13,12 +14,14 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 56,
-        title: const SizedBox(
+        title: SizedBox(
           height: 28,
           width: 220,
           child: Text(
             AppStrings.mainScreenAppBarTitle,
-            style: AppTypography.headerEerieBlackTextStyle,
+            style: AppTypography.headerTextStyle.copyWith(
+              color: AppColors.eerieBlack,
+            ),
           ),
         ),
         backgroundColor: AppColors.pictonBlue,
@@ -34,41 +37,33 @@ class MainScreen extends StatelessWidget {
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemFirst,
               onTapCallback: () {
-                debugPrint('Mocked with emptyness');
+                Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemSecond,
               onTapCallback: () {
-                debugPrint('Mocked with emptyness');
+                Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemThird,
               onTapCallback: () {
-                debugPrint('Mocked with emptyness');
+                Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemFourth,
               onTapCallback: () {
-                debugPrint('Mocked with emptyness');
+                Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
           ],
         ),
       ),
-    );
-  }
-
-  // ignore: unused_element
-  void _navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push<void>(
-      context,
-      MaterialPageRoute(builder: (context) => screen),
     );
   }
 }
