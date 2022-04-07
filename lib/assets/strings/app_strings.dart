@@ -6,6 +6,6 @@ class AppStrings {
   static const String mainScreenTaskItemThirdText = 'Codelab';
   static const String mainScreenTaskItemFourthText = 'Асинхронный запрос';
 
-  // CodelabScrene
+  // CodelabScreen
   static const String codelabScreenAppBarTitle = 'Контент кодлаба';
 }
