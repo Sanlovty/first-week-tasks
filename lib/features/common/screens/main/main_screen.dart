@@ -51,7 +51,7 @@ class MainScreen extends StatelessWidget {
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemThirdText,
               onTapCallback: () {
-                Navigator.of(context).pushNamed(AppRouter.mainScreen);
+                Navigator.of(context).pushNamed(AppRouter.codelabScreen);
               },
             ),
             const SizedBox(height: 16),
