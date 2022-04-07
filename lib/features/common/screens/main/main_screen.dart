@@ -35,28 +35,28 @@ class MainScreen extends StatelessWidget {
         child: Column(
           children: [
             TaskItemWidget(
-              title: AppStrings.mainScreenTaskItemFirst,
+              title: AppStrings.mainScreenTaskItemFirstText,
               onTapCallback: () {
                 Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
-              title: AppStrings.mainScreenTaskItemSecond,
+              title: AppStrings.mainScreenTaskItemSecondText,
               onTapCallback: () {
                 Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
-              title: AppStrings.mainScreenTaskItemThird,
+              title: AppStrings.mainScreenTaskItemThirdText,
               onTapCallback: () {
                 Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
             ),
             const SizedBox(height: 16),
             TaskItemWidget(
-              title: AppStrings.mainScreenTaskItemFourth,
+              title: AppStrings.mainScreenTaskItemFourthText,
               onTapCallback: () {
                 Navigator.of(context).pushNamed(AppRouter.mainScreen);
               },
