@@ -77,7 +77,10 @@ class _FourSquaresScreenState extends State<FourSquaresScreen> {
               _squareColor = _getRandomColor();
             });
           },
-          child: const Icon(Icons.edit),
+          child: const Icon(
+            Icons.edit,
+            color: AppColors.deepViolet,
+          ),
         ),
         height: 56,
         width: 56,
