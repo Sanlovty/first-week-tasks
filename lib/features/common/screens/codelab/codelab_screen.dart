@@ -11,7 +11,6 @@ class CodelabScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 56,
         title: SizedBox(
           height: 28,
           width: 220,
