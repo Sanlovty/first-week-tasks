@@ -1,4 +1,4 @@
-import 'package:first_week/features/common/screens/main/main_screen.dart';
+import 'package:first_week/features/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
 // Root MaterialApp wrapper for every screens
@@ -7,9 +7,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      initialRoute: AppRouter.mainScreen,
+      onGenerateRoute: (routeSettings) =>
+          AppRouter.routes[routeSettings.name]!(routeSettings.arguments),
     );
   }
 }
