@@ -21,7 +21,6 @@ class _FourSquaresScreenState extends State<FourSquaresScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 56,
         title: SizedBox(
           height: 28,
           width: 220,
