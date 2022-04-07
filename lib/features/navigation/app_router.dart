@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   static const String mainScreen = '/';
+  static const String codelabScreen = '/codelab';
 
   static final Map<String, Route Function(Object?)> routes = {
     mainScreen: (_) => MainScreenRoute(),
