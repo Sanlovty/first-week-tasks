@@ -5,7 +5,7 @@ import 'package:first_week/features/common/screens/main/widgets/task_item_widget
 import 'package:first_week/features/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
-// Main screen
+// Main screen 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -37,7 +37,7 @@ class MainScreen extends StatelessWidget {
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemFirst,
               onTapCallback: () {
-                Navigator.of(context).pushNamed(AppRouter.mainScreen);
+                Navigator.of(context).pushNamed(AppRouter.fourSquaresScreen);
               },
             ),
             const SizedBox(height: 16),
