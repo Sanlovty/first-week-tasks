@@ -1,14 +1,12 @@
-import 'package:first_week/assets/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 const defaultFontFamily = 'Roboto';
 
 /// Text styles
 class AppTypography {
-  static const headerEerieBlackTextStyle = TextStyle(
+  static const headerTextStyle = TextStyle(
     fontWeight: FontWeight.w500,
     fontFamily: defaultFontFamily,
-    color: AppColors.eerieBlack,
     fontSize: 22,
     shadows: [
       Shadow(
@@ -18,10 +16,9 @@ class AppTypography {
       ),
     ],
   );
-  static const normalEerieBlackTextStyle = TextStyle(
+  static const normalTextStyle = TextStyle(
     fontWeight: FontWeight.w400,
     fontFamily: defaultFontFamily,
-    color: AppColors.black,
     fontSize: 16,
   );
 }
