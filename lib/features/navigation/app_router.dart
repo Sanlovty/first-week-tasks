@@ -1,4 +1,3 @@
-import 'package:first_week/features/common/screens/codelab/codelab_screen.dart';
 import 'package:first_week/features/common/screens/codelab/codelab_screen_route.dart';
 import 'package:first_week/features/common/screens/main/main_screen_route.dart';
 import 'package:flutter/material.dart';
