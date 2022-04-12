@@ -5,5 +5,5 @@ class ApiUrls {
   static const String photosGetList = photosBase;
   static const String photosGetById = '$photosBase/{photo_id}';
 
-  static const String defautlDioUrl = 'https://jsonplaceholder.typicode.cm';
+  static const String defautlDioUrl = 'https://jsonplaceholder.typicode.com';
 }

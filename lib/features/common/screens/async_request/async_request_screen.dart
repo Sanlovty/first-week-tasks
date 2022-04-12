@@ -74,8 +74,7 @@ class _AsyncRequestScreenState extends State<AsyncRequestScreen> {
                 return const SizedBox();
               } else {
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 14),
                   child: ListView.separated(
                     separatorBuilder: (context, index) =>
                         const SizedBox(height: 10),
