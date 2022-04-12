@@ -4,6 +4,7 @@ import 'package:first_week/assets/colors/app_colors.dart';
 import 'package:first_week/assets/strings/app_strings.dart';
 import 'package:first_week/assets/themes/typography/app_typography.dart';
 import 'package:first_week/features/common/screens/colored_list/widgets/rectangle_widget.dart';
+import 'package:first_week/util/ui/ui_utils.dart';
 import 'package:flutter/material.dart';
 
 // Colored list Screen
@@ -40,13 +41,11 @@ class _ColoredListScreenState extends State<ColoredListScreen> {
           right: 16,
           top: 14,
         ),
-        child: ListView.builder(
+        child: ListView.separated(
           itemCount: 1000,
-          itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: RectangleWidget(
-              color: _rectangleColor,
-            ),
+          separatorBuilder: (context, index) => const SizedBox(height: 10),
+          itemBuilder: (context, index) => RectangleWidget(
+            color: _rectangleColor,
           ),
         ),
       ),
@@ -57,7 +56,7 @@ class _ColoredListScreenState extends State<ColoredListScreen> {
           borderRadius: BorderRadius.circular(16),
           onTap: () {
             setState(() {
-              _rectangleColor = _getRandomColor();
+              _rectangleColor = getRandomColor();
             });
           },
           child: const Icon(
@@ -72,17 +71,6 @@ class _ColoredListScreenState extends State<ColoredListScreen> {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-    );
-  }
-
-  // TODO: wille be moved to util folder in common folder ( later )
-  /// Returns random [Color]
-  Color _getRandomColor() {
-    return Color.fromARGB(
-      Random().nextInt(256),
-      Random().nextInt(256),
-      Random().nextInt(256),
-      Random().nextInt(256),
     );
   }
 }
