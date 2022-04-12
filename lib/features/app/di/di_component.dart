@@ -1,8 +1,8 @@
 // ignore_for_file: member-ordering-extended
 
 import 'package:dio/dio.dart';
-import 'package:first_week/api/repositories/photo/photo_repository.dart';
-import 'package:first_week/api/service/photo_api/photo_api_client.dart';
+import 'package:first_week/api/photo/repositories/photo_repository.dart';
+import 'package:first_week/api/photo/service/photo_api/photo_api_client.dart';
 import 'package:first_week/config/api_urls.dart';
 import 'package:first_week/config/dio_options.dart';
 import 'package:first_week/features/common/domain/interactors/photo/photo_interactor.dart';

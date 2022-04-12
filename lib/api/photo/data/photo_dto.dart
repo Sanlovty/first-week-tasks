@@ -4,11 +4,11 @@ part 'photo_dto.g.dart';
 /// DTO for photo model
 @JsonSerializable()
 class PhotoDto {
-  int? albumId;
-  int? id;
-  String? title;
-  String? url;
-  String? thumbnailUrl;
+  final int? albumId;
+  final int? id;
+  final String? title;
+  final String? url;
+  final String? thumbnailUrl;
 
   PhotoDto({
     this.albumId,

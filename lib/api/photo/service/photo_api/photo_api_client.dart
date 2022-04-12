@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:first_week/api/data/photo_dto.dart';
+import 'package:first_week/api/photo/data/photo_dto.dart';
 import 'package:first_week/config/api_urls.dart';
 import 'package:retrofit/retrofit.dart';
 part 'photo_api_client.g.dart';

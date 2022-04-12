@@ -1,4 +1,4 @@
-import 'package:first_week/api/repositories/photo/photo_repository.dart';
+import 'package:first_week/api/photo/repositories/photo_repository.dart';
 import 'package:first_week/features/common/domain/entities/photo.dart';
 import 'package:first_week/features/common/domain/mappers/photo/photo_mappers.dart';
 import 'package:flutter/material.dart';

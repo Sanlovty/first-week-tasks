@@ -1,4 +1,4 @@
-import 'package:first_week/api/data/photo_dto.dart';
+import 'package:first_week/api/photo/data/photo_dto.dart';
 import 'package:first_week/features/common/domain/entities/photo.dart';
 
 /// Converts [PhotoDto] into [Photo]
