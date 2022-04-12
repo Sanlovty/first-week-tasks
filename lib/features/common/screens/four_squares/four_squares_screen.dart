@@ -1,9 +1,7 @@
-import 'dart:math';
-
 import 'package:first_week/assets/colors/app_colors.dart';
-import 'package:first_week/assets/strings/app_strings.dart';
-import 'package:first_week/assets/themes/typography/app_typography.dart';
-import 'package:first_week/features/common/screens/four_squares/widgets/square_widget.dart';
+import 'package:first_week/features/common/screens/four_squares/widgets/four_squares_app_bar_widget.dart';
+import 'package:first_week/features/common/widgets/squares_grid_widget.dart';
+import 'package:first_week/util/ui/ui_utils.dart';
 import 'package:flutter/material.dart';
 
 /// FourSquares screen
@@ -20,49 +18,19 @@ class _FourSquaresScreenState extends State<FourSquaresScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: SizedBox(
-          height: 28,
-          width: 220,
-          child: Text(
-            AppStrings.fourSquaresScreenAppBarTitle,
-            style: AppTypography.headerTextStyle.copyWith(
-              color: AppColors.eerieBlack,
-            ),
-          ),
-        ),
-        backgroundColor: AppColors.pictonBlue,
-        toolbarHeight: 69,
-      ),
+      appBar: const FourSquaresAppBarWidget(),
       body: Padding(
-        padding: const EdgeInsets.only(
-          top: 82,
-          left: 32,
-          right: 32,
+        padding: const EdgeInsets.symmetric(
+          vertical: 82,
+          horizontal: 32,
         ),
         child: Center(
-          child: Column(
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SquareWidget(color: _squareColor),
-                  const SizedBox(width: 10),
-                  SquareWidget(color: _squareColor),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SquareWidget(color: _squareColor),
-                  const SizedBox(width: 10),
-                  SquareWidget(color: _squareColor),
-                ],
-              ),
-            ],
+          child: SquaresGridWidget(
+            rowCount: 2,
+            columnCount: 2,
+            horizontalSpacing: 10,
+            verticalSpacing: 10,
+            color: _squareColor,
           ),
         ),
       ),
@@ -73,7 +41,7 @@ class _FourSquaresScreenState extends State<FourSquaresScreen> {
           borderRadius: BorderRadius.circular(16),
           onTap: () {
             setState(() {
-              _squareColor = _getRandomColor();
+              _squareColor = getRandomColor();
             });
           },
           child: const Icon(
@@ -88,16 +56,6 @@ class _FourSquaresScreenState extends State<FourSquaresScreen> {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-    );
-  }
-
-  /// Returns random [Color]
-  Color _getRandomColor() {
-    return Color.fromARGB(
-      Random().nextInt(256),
-      Random().nextInt(256),
-      Random().nextInt(256),
-      Random().nextInt(256),
     );
   }
 }
