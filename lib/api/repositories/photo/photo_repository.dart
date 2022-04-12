@@ -12,13 +12,9 @@ class PhotoRepository {
     required this.client,
   });
 
-  Future<PhotoDto?> photoGetById({
-    required int id,
-  }) async {
+  Future<PhotoDto?> photoGetById({required int id}) async {
     try {
-      return client.photoGetById(
-        id,
-      );
+      return client.photoGetById(id);
     } on DioError catch (e) {
       debugPrint(e.toDebugString());
 
@@ -26,13 +22,13 @@ class PhotoRepository {
     }
   }
 
-  Future<List<PhotoDto?>> photoGetList() async {
+  Future<List<PhotoDto?>?> photoGetList() async {
     try {
       return client.photoGetList();
     } on DioError catch (e) {
       debugPrint(e.toDebugString());
 
-      return [];
+      return null;
     }
   }
 }

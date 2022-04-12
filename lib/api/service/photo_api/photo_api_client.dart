@@ -11,7 +11,7 @@ abstract class PhotoApiClient {
 
   // Photos:
   @GET(ApiUrls.photosGetList)
-  Future<List<PhotoDto?>> photoGetList();
+  Future<List<PhotoDto?>?> photoGetList();
 
   @GET(ApiUrls.photosGetById)
   Future<PhotoDto?> photoGetById(

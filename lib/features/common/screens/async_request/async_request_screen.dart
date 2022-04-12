@@ -22,8 +22,7 @@ class AsyncRequestScreen extends StatefulWidget {
 }
 
 class _AsyncRequestScreenState extends State<AsyncRequestScreen> {
-  late StreamController<List<Photo>> streamPhotos =
-      StreamController<List<Photo>>();
+  late final streamPhotos = StreamController<List<Photo>>();
 
   @override
   void initState() {
@@ -57,22 +56,43 @@ class _AsyncRequestScreenState extends State<AsyncRequestScreen> {
       body: StreamBuilder<List<Photo>>(
         stream: streamPhotos.stream,
         builder: (context, snapshot) {
-          return snapshot.hasData
-              ? Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 14),
-                  child: ListView.builder(
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+              debugPrint('loading with null data');
+
+              // probably this case is useless for our case
+              return const SizedBox();
+            case ConnectionState.waiting:
+              debugPrint('loading data');
+
+              return const Center(child: CircularProgressIndicator());
+            case ConnectionState.active:
+              debugPrint('loading is done. Data is not null');
+              if (snapshot.hasError) {
+                debugPrint('error inside');
+
+                return const SizedBox();
+              } else {
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 10),
                     itemCount: snapshot.data!.length,
                     itemBuilder: (ctx, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: PhotoCardWidget(
-                          photo: snapshot.data![index],
-                        ),
+                      return PhotoCardWidget(
+                        photo: snapshot.data![index],
                       );
                     },
                   ),
-                )
-              : const Center(child: CircularProgressIndicator());
+                );
+              }
+            case ConnectionState.done:
+              debugPrint('Snapshot has error');
+              // here will be something like snackbars
+              return const SizedBox();
+          }
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
@@ -82,9 +102,11 @@ class _AsyncRequestScreenState extends State<AsyncRequestScreen> {
           borderRadius: BorderRadius.circular(16),
           onTap: () async {
             final response = await _fetchPhotos();
-            setState(() {
-              streamPhotos.add(response);
-            });
+            if (response != null) {
+              setState(() {
+                streamPhotos.add(response);
+              });
+            }
           },
           child: const Icon(
             Icons.edit,
@@ -102,15 +124,20 @@ class _AsyncRequestScreenState extends State<AsyncRequestScreen> {
   }
 
   // ignore: unused_element
-  Future<Photo> _fetchPhoto(int id) async {
+  Future<Future<Photo?>> _fetchPhoto(int id) async {
     return widget.photoInteractor.getPhotoById(id);
   }
 
-  Future<List<Photo>> _fetchPhotos() async {
-    return widget.photoInteractor.getPhotos();
+  Future<List<Photo>?> _fetchPhotos() async {
+    final response = await widget.photoInteractor.getPhotos();
+
+    return response;
   }
 
   Future<void> _initStreamPhotos() async {
-    streamPhotos.add(await _fetchPhotos());
+    final response = await _fetchPhotos();
+    if (response != null) {
+      streamPhotos.add(response);
+    }
   }
 }

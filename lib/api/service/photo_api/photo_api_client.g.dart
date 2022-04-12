@@ -16,7 +16,7 @@ class _PhotoApiClient implements PhotoApiClient {
   String? baseUrl;
 
   @override
-  Future<List<PhotoDto?>> photoGetList() async {
+  Future<List<PhotoDto?>?> photoGetList() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -27,8 +27,8 @@ class _PhotoApiClient implements PhotoApiClient {
                 .compose(_dio.options, '/photos',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => PhotoDto.fromJson(i as Map<String, dynamic>))
+    var value = _result.data
+        ?.map((dynamic i) => PhotoDto.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
