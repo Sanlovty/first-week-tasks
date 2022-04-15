@@ -1,8 +1,9 @@
 import 'package:first_week/assets/colors/app_colors.dart';
 import 'package:first_week/assets/themes/typography/app_typography.dart';
+import 'package:first_week/features/common/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
-// Widget for tasks, used in main screen
+/// Widget for tasks, used in [MainScreen]
 class TaskItemWidget extends StatelessWidget {
   final String title;
   final VoidCallback onTapCallback;
