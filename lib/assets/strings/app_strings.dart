@@ -7,6 +7,8 @@ class AppStrings {
   static const String mainScreenTaskItemThirdText = 'Codelab';
   static const String mainScreenTaskItemFourthText = 'Асинхронный запрос';
 
+  // CodelabScreen
+  static const String codelabScreenAppBarTitle = 'Контент кодлаба';
   // ColoredList Screen
   static const String coloredListScreenAppBarTitle = 'Цветной список';
   // FourSquares Screen
