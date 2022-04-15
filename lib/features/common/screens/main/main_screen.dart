@@ -37,7 +37,7 @@ class MainScreen extends StatelessWidget {
             TaskItemWidget(
               title: AppStrings.mainScreenTaskItemFirstText,
               onTapCallback: () {
-                Navigator.of(context).pushNamed(AppRouter.mainScreen);
+                Navigator.of(context).pushNamed(AppRouter.fourSquaresScreen);
               },
             ),
             const SizedBox(height: 16),

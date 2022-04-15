@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Colors
+/// All [Color] values for in-app usage
 class AppColors {
   static const Color pictonBlue = Color.fromRGBO(67, 171, 245, 1);
   static const Color eerieBlack = Color.fromRGBO(28, 27, 31, 1);
