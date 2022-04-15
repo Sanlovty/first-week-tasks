@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const defaultFontFamily = 'Roboto';
 
-/// Text styles
+/// All [TextStyle] properties for in-app usage
 class AppTypography {
   static const headerTextStyle = TextStyle(
     fontWeight: FontWeight.w500,
